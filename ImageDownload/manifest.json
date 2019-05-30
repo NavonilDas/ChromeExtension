@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "ImagePDF",
+    "version": "1.0",
+    "description": "This Extension downloads all images of a Website into a PDF.",
+    "icons": {
+        "128": "imagepdf.png"
+    },
+    "background": {
+        "scripts": [
+            "jspdf.min.js"
+        ]
+    },
+    "browser_action": {
+        "default_title": "Image PDF",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": 
+    [
+        {
+            "matches":["http://*/*"],
+            "js": [ "jspdf.min.js" ]
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ]
+}
